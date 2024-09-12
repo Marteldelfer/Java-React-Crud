@@ -55,7 +55,7 @@ public class ProductController {
 
     @PutMapping("/product/{id}")
     ResponseEntity<?> updateProduct(@Valid @RequestBody Product product) {
-        log.info("Request to update group: {}", product);
+        log.info("Request to update product: {}", product);
         Product result = productRepo.save(product);
         return ResponseEntity.ok().body(result);
     }
