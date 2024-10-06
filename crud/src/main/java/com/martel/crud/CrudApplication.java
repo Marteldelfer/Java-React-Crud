@@ -1,13 +1,13 @@
-package com.marteldelfer.crudreact;
+package com.martel.crud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CrudreactApplication {
+public class CrudApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CrudreactApplication.class, args);
+		SpringApplication.run(CrudApplication.class, args);
 	}
 
 }

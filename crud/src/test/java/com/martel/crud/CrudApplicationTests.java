@@ -1,10 +1,10 @@
-package com.marteldelfer.crudreact;
+package com.martel.crud;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CrudreactApplicationTests {
+class CrudApplicationTests {
 
 	@Test
 	void contextLoads() {
