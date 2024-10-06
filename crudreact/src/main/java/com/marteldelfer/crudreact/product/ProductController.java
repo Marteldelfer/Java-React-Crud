@@ -1,4 +1,4 @@
-package com.marteldelfer.crudreact.controllers;
+package com.marteldelfer.crudreact.product;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -19,9 +19,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.marteldelfer.crudreact.models.Product;
-import com.marteldelfer.crudreact.repositories.ProductRepository;
 
 import jakarta.validation.Valid;
 

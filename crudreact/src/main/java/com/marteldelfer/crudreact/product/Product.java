@@ -1,4 +1,4 @@
-package com.marteldelfer.crudreact.models;
+package com.marteldelfer.crudreact.product;
 
 import java.util.Date;
 import java.util.UUID;
@@ -18,10 +18,8 @@ public class Product {
     private UUID id;
 
     private String name;
-    private String imagePath;
     private int quantity;
     private double price;
-    private Boolean enabled;
     private Date createdAt;
     
 
@@ -37,12 +35,6 @@ public class Product {
     public void setName(String name) {
         this.name = name;
     }
-    public String getImagePath() {
-        return imagePath;
-    }
-    public void setImagePath(String imagePath) {
-        this.imagePath = imagePath;
-    }
     public int getQuantity() {
         return quantity;
     }
@@ -54,12 +46,6 @@ public class Product {
     }
     public void setPrice(double price) {
         this.price = price;
-    }
-    public Boolean getEnabled() {
-        return enabled;
-    }
-    public void setEnabled(Boolean enabled) {
-        this.enabled = enabled;
     }
     public Date getCreatedAt() {
         return createdAt;
