@@ -22,7 +22,7 @@ public class ProductController {
 
     private final ProductService service;
 
-    @GetMapping
+    @GetMapping("/")
     public ResponseEntity<List<Product>> getAllProducts() {
         return ResponseEntity.ok(service.getAllProducts());
     }
@@ -34,7 +34,7 @@ public class ProductController {
         return ResponseEntity.ok(service.getProduct(id));
     }
 
-    @PostMapping
+    @PostMapping("/")
     public ResponseEntity<Product> createProduct(
         @RequestBody Product product
     ) {
@@ -43,9 +43,10 @@ public class ProductController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Product> editProduct(
+        @PathVariable("id") UUID id,
         @RequestBody Product product
     ) {
-        return ResponseEntity.ok(service.save(product));
+        return ResponseEntity.ok(service.edit(id, product));
     }
 
     @DeleteMapping("/{id}")

@@ -8,14 +8,17 @@ import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.UUID;
+import java.util.Date;
 
 @Entity
 @Table(name = "products")
 @Getter
 @Setter
+@NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class Product {
@@ -27,5 +30,6 @@ public class Product {
     private String name;
     private int quantity;
     private float price;
+    private Date createdAt;
     
 }
