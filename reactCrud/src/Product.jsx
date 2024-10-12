@@ -11,6 +11,11 @@ function Product() {
             }).catch(error => console.error(error));
     }, []);
 
+    function deleteProduct(id) {
+        axios.delete('http://localhost:8080/api/' + id)
+            .then(() => setData(d => d.filter(prod => prod.id !== id)));
+    }
+
     return (
         data.map(product =>
         <tr key={product.id}>
@@ -20,7 +25,7 @@ function Product() {
             <td>{product.price}</td>
             <td>{product.createdAt.substring(0, 10)}</td>
             <td>
-                <button className='delete'>Delete</button>
+                <button className='delete' onClick={() => deleteProduct(product.id)}>Delete</button>
                 <button className='edit'>Edit</button>
             </td>
         </tr>
