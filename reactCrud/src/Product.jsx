@@ -18,7 +18,11 @@ function Product() {
             <td>{product.name}</td>
             <td>{product.quantity}</td>
             <td>{product.price}</td>
-            <td>{product.createdAt}</td>
+            <td>{product.createdAt.substring(0, 10)}</td>
+            <td>
+                <button className='delete'>Delete</button>
+                <button className='edit'>Edit</button>
+            </td>
         </tr>
         )
     );

@@ -12,6 +12,7 @@ function App() {
             <th>quantity</th>
             <th>price</th>
             <th>createdAt</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
