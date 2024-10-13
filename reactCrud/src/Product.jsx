@@ -1,4 +1,4 @@
-import {useState, useEffect, act} from 'react';
+import {useState, useEffect} from 'react';
 import axios from 'axios';
 
 function Product() {
@@ -66,7 +66,31 @@ function Product() {
 	function deleteProduct(id) {
 		axios.delete('http://localhost:8080/api/' + id)
 			.then(() => setData(d => d.filter(prod => prod.id !== id)));
-	}
+	};
+
+	function editProduct(id) {
+		
+		if (nameInput === "" || quantityInput === "" || priceInput === "") {
+			return;
+		}
+
+		const product = {
+			name: nameInput,
+			quantity: quantityInput,
+			price: priceInput
+		};
+
+		axios.put('http://localhost:8080/api/' + id, product)
+			.then(response => {
+				setData(d => d.filter(prod => prod.id !== id));
+				setData(d => [...d, response.data]);
+
+				setNameInput("");
+				setQuantityInput("");
+				setPriceInput("");
+			});
+
+	}; 
 
 	return (
 		<>
@@ -92,7 +116,7 @@ function Product() {
 					<td>{product.createdAt.substring(0, 10)}</td>
 					<td>
 						<button className='delete' onClick={() => deleteProduct(product.id)}>Delete</button>
-						<button className='edit'>Edit</button>
+						<button className='edit' onClick={() => editProduct(product.id)}>Edit</button>
 					</td>
 				</tr>
 				)}
