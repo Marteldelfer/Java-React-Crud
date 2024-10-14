@@ -26,18 +26,28 @@ function Product() {
 	}
 
 	const form = (
-		<>
-		<label id='name'>Name: </label>
-		<input type="text" value={nameInput} 
-			onChange={handleNameChange} placeholder='Product Name'/><br />
-		<label id='quantity'>Quantity: </label>
-		<input type="number" value={quantityInput} 
-			onChange={handleQuantityChange} placeholder='0'/><br />
-		<label id='price'>Price: </label>
-		<input type="number" value={priceInput} 
-			onChange={handlePriceChange} placeholder='0' /><br />
-		<button onClick={() => submitProduct()}>Create Product</button>
-		</>
+		<div className='row'>
+      <div className='col-md-4 mx-auto rounded border p-4'>
+        <div className='row'>
+          <label id='name' className='col-sm-4 col-form-label'>Name: </label>
+          <input type="text" className='col-sm form-control' value={nameInput}
+            onChange={handleNameChange} placeholder='Product Name'/>
+        </div>
+        <div className='row'>
+          <label id='quantity' className='col-sm-4 col-form-label'>Quantity: </label>
+          <input type="number" className='col-sm form-control' value={quantityInput}
+            onChange={handleQuantityChange} placeholder='0'/>
+        </div>
+        <div className='row'>
+          <label id='price'  className='col-sm-4 col-form-label'>Price: </label>
+          <input type="number" className='col-sm form-control' value={priceInput}
+            onChange={handlePriceChange} placeholder='0' />
+        </div>
+        <div className='row'>
+          <button className="btn btn-primary" onClick={() => submitProduct()}>Create Product</button>
+        </div>
+      </div>
+		</div>
 	);
 
 	function submitProduct() {
@@ -95,7 +105,7 @@ function Product() {
 	return (
 		<>
 		{form}
-		<table>
+		<table className='table'>
 			<thead>
 				<tr>
 					<th>id</th>
@@ -115,8 +125,10 @@ function Product() {
 					<td>{product.price}</td>
 					<td>{product.createdAt.substring(0, 10)}</td>
 					<td>
-						<button className='delete' onClick={() => deleteProduct(product.id)}>Delete</button>
-						<button className='edit' onClick={() => editProduct(product.id)}>Edit</button>
+						<button className='btn btn-danger btn-sm' 
+						onClick={() => deleteProduct(product.id)}>Delete</button>
+						<button className='btn btn-primary btn-sm' 
+						onClick={() => editProduct(product.id)}>Edit</button>
 					</td>
 				</tr>
 				)}
